@@ -1,0 +1,45 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 21,
+      "patch": 1
+    },
+    "configurePresets": [
+      {
+        "name": "debug",
+        "generator": "MinGW Makefiles",
+        "binaryDir": "./bin/debug",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "CMAKE_C_COMPILER": "gcc",
+          "CMAKE_CXX_COMPILER": "g++",
+          "CMAKE_PREFIX_PATH": "C:/Program Files (x86)/my-library"
+        }
+      },
+      {
+        "name": "release",
+        "generator": "MinGW Makefiles",
+        "binaryDir": "./bin/release",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_C_COMPILER": "gcc",
+          "CMAKE_CXX_COMPILER": "g++",
+          "CMAKE_PREFIX_PATH": "C:/Program Files (x86)/my-library"
+        }
+      }
+    ],
+    "buildPresets": [
+      {
+        "name": "build-debug",
+        "hidden": false,
+        "configurePreset": "debug"
+      },
+      {
+        "name": "build-release",
+        "hidden": false,
+        "configurePreset": "release"
+      }
+    ]
+  }
+  
